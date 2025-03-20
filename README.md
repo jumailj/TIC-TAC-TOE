@@ -10,6 +10,10 @@
 ## **Link to video**
 [Project Demo Video](https://youtu.be/NhiiquXRcW8)
 
+## **Hosted** 
+[app Link](http://144.24.145.204:8000)
+
+
 ## **Installation**
 
 1. Create a virtual environment 
