@@ -1,41 +1,130 @@
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
 }
+
+/* Container styling */
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Header styling */
+h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Registration form styling */
 .registration, .waiting, .game {
     margin: 20px 0;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
     display: none;
 }
+
+.registration input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.registration button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registration button:hover {
+    background-color: #45a049;
+}
+
+/* Waiting section styling */
+.waiting h2 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.waiting #waitingMessage {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Game board styling */
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
-    margin: 20px 0;
+    margin: 20px auto;
+    justify-content: center;
 }
+
 .cell {
     width: 100px;
     height: 100px;
-    border: 2px solid #333;
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
-    cursor: pointer;
-}
-.status {
-    margin: 20px 0;
-    font-size: 18px;
+    font-size: 2rem;
     font-weight: bold;
+    color: #4CAF50;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Game status styling */
+.status {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Game info styling */
+#gameInfo {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
 }
