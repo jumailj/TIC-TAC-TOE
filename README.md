@@ -12,6 +12,10 @@ Add the link here
 
 ## **Installation**
 How on earth can we set up your project up and running?
+1. Create a virtual environment 
+2. `python3 -m venv env`
+3. `source env/bin/activate (macos)`
+4. `pip install -r requirements.txt`
 
 ## **Steps to run**  
 Care to explain?
