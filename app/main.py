@@ -20,34 +20,35 @@ class Game:
         self.board = [[None for _ in range(3)] for _ in range(3)]
         self.player1_id = player1_id
         self.player2_id = player2_id
-        self.current_player_id = player1_id  # Player 1 starts
+        self.current_player_id = player1_id  
         self.winner = None
         self.is_draw = False
         self.marks = {player1_id: "X", player2_id: "O"}
     
     def make_move(self, player_id: str, row: int, col: int) -> bool:
-        # Check if it's the player's turn
+
+
         if player_id != self.current_player_id:
             return False
         
-        # Check if the cell is empty
+  
         if self.board[row][col] is not None:
             return False
         
-        # Make the move
+
         self.board[row][col] = self.marks[player_id]
         
-        # Check for win or draw
+    
         self.check_game_state()
         
-        # Switch player
+   
         if not self.winner and not self.is_draw:
             self.current_player_id = self.player2_id if self.current_player_id == self.player1_id else self.player1_id
         
         return True
     
     def check_game_state(self):
-        # Check rows
+   
         for row in self.board:
             if row[0] is not None and row[0] == row[1] == row[2]:
                 self.winner = self.player1_id if row[0] == "X" else self.player2_id
@@ -87,6 +88,7 @@ class Game:
             "player2": self.player2_id,
             "marks": self.marks
         }
+
 
 # Game Manager
 class GameManager:
@@ -248,10 +250,9 @@ async def websocket_endpoint(websocket: WebSocket, player_id: str):
 
 
 
-# Mount static files (CSS and JS)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
-# HTML for the frontend
+
 @app.get("/", response_class=HTMLResponse)
 async def get_html():
     with open("app/templates/index.html", "r") as file:
@@ -260,7 +261,7 @@ async def get_html():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    import os
 
-
-print("Server would start on http://127.0.0.1:8000")
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
