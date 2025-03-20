@@ -214,7 +214,7 @@ async def join_queue(player_id: str):
     game_manager.add_to_waiting(player_id)
     return {"status": "waiting", "message": "Added to matchmaking queue"}
 
-@app.websocket("/ws/{player_id}")
+@app.websocket("/wss/{player_id}")
 async def websocket_endpoint(websocket: WebSocket, player_id: str):
     await websocket.accept()
     
