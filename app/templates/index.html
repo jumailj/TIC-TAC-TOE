@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        
+        <div class="registration" id="registration">
+            <h2>Enter Your Name</h2>
+            <input type="text" id="playerName" placeholder="Your name">
+            <button id="registerBtn">Register</button>
+        </div>
+        
+        <div class="waiting" id="waiting">
+            <h2>Waiting for an opponent...</h2>
+            <div id="waitingMessage">Looking for another player to join...</div>
+        </div>
+        
+        <div class="game" id="gameContainer">
+            <h2>Game</h2>
+            <div class="status" id="status">Your turn</div>
+            <div class="board" id="board"></div>
+            <div id="gameInfo"></div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
